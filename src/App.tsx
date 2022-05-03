@@ -1,24 +1,14 @@
-import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Actions } from "./axios/actions";
-import { Index } from "./components/index";
+import { Posts } from "./components/posts/posts";
+import { CreatePosts } from "./components/posts/createPosts";
 function App() {
-  const data: any = Actions();
-  const [posts, setPosts] = useState();
-  useEffect(() => {
-    setPosts(data);
-    console.log(data);
-  }, []);
-  console.log(posts);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <Index />
+        <Posts />
+        <CreatePosts />
       </header>
     </div>
   );
