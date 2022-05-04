@@ -1,7 +1,7 @@
 export const Career = () => {
   return (
-    <div className="p-20">
-      <p className="text-3xl">Career</p>
+    <div className=" p-5 md:p-20">
+      <p className="text-3xl py-5">Career</p>
       <div className="grid grid-cols-1 text-center">
         <div>
           <p className=" text-xl">2022年6月〜</p>

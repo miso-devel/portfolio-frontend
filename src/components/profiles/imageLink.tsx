@@ -17,7 +17,7 @@ export const ImageLink = () => {
           </a>
 
           <a
-            href="https://twitter.com/donennnn"
+            href="https://github.com/nisi0929"
             className=" text-center justify-center items-center flex"
           >
             <img src={github} alt="" className="w-10" />
