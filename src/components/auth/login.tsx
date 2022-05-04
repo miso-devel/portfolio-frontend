@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { SessionCreate } from "../../axios/userActions";
+import { AdminPosts } from "../posts/adminPosts";
+import { CreatePosts } from "../posts/createPosts";
+
 export const Login = () => {
   type Form = { email: string; password: string };
   const [formData, setFormData] = useState<Form>({
@@ -7,15 +10,12 @@ export const Login = () => {
     password: "",
   });
   const [loggedInStatus, LoggedIn] = useState<string>("未ログイン");
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e);
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  console.log(formData);
+
   const onSubmit = (event: Form) => {
-    console.log(event);
     SessionCreate(event, LoggedIn);
   };
   return (
@@ -44,6 +44,14 @@ export const Login = () => {
       </div>
 
       <button onClick={() => onSubmit(formData)}>送信</button>
+      {loggedInStatus === "ログイン済み" ? (
+        <div>
+          <AdminPosts />
+          <CreatePosts />
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import { CreateInstance } from "./createInstance";
-import { useEffect, useState } from "react";
 
 // Logged_inアクション
 // ログインしたか確かめる
@@ -9,7 +8,6 @@ export const LoggedInCheck = () => {
     .get("/logged_in", { withCredentials: true })
     .then((res) => {
       console.log("response:", res);
-      console.log(res.data.logged_in);
     })
     .catch((error) => {
       console.log("error:", error);
@@ -37,8 +35,6 @@ export const SessionCreate = (
       { withCredentials: true }
     )
     .then((res) => {
-      console.log("response:", res.data);
-      console.log(res.data.logged_in);
       if (res.data.logged_in) {
         LoggedIn("ログイン済み");
       }
