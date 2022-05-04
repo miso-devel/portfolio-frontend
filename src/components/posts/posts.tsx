@@ -1,4 +1,4 @@
-import { PostIndex } from "../../axios/postActions";
+import { PostIndex } from "../../axios/Postactions";
 
 export const Posts = () => {
   const MyPosts = PostIndex();

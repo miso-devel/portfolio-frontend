@@ -1,4 +1,4 @@
-import { PostCreate } from "../../axios/postActions";
+import { PostCreate } from "../../axios/Postactions";
 import { useState } from "react";
 export const CreatePosts = () => {
   type Form = { title: string; content: string; url: string };

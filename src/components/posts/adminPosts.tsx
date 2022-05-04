@@ -1,5 +1,5 @@
-import { PostIndex } from "../../axios/postActions";
-import { PostDelete } from "../../axios/postActions";
+import { PostIndex } from "../../axios/Postactions";
+import { PostDelete } from "../../axios/Postactions";
 export const AdminPosts = () => {
   const MyPosts = PostIndex();
   const Delete = (data: any) => PostDelete(data);
