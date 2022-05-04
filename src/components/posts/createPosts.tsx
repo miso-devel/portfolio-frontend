@@ -11,9 +11,7 @@ export const CreatePosts = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e);
     const { name, value } = e.target;
-    console.log(name);
-    console.log(value);
-    setFormData({ ...formData, [name]: value, [name]: value });
+    setFormData({ ...formData, [name]: value });
   };
   console.log(formData);
   const onSubmit = (event: Form) => {
