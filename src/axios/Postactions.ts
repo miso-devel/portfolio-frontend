@@ -32,3 +32,14 @@ export const PostCreate = (formData: {
     url: formData.url,
   });
 };
+
+// deleteアクション
+export const PostDelete = (formData: {
+  id: number;
+  title: string;
+  content: string;
+  url: string;
+}) => {
+  const client = CreateInstance();
+  return client.delete(`/posts/${formData.id}`, formData);
+};

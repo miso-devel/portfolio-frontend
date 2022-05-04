@@ -1,7 +1,8 @@
 import { PostIndex } from "../../axios/Postactions";
+import { PostDelete } from "../../axios/Postactions";
 export const Posts = () => {
   const MyPosts = PostIndex();
-  console.log(PostIndex());
+  const Delete = (data: any) => PostDelete(data);
   return (
     <div className="p-20">
       <p className="text-3xl">Apps</p>
@@ -13,6 +14,7 @@ export const Posts = () => {
                 <p>{p.title}</p>
                 <p>{p.content}</p>
                 <p>{p.url}</p>
+                <button onClick={() => Delete(p)}>button</button>
               </div>
             );
           }
