@@ -1,12 +1,12 @@
-import { PostCreate } from "../../axios/postActions";
 import { useState } from "react";
-export const CreatePosts = () => {
-  type Form = { title: string; content: string; url: string };
+import { SessionCreate } from "../../axios/userActions";
+export const Login = () => {
+  type Form = { email: string; password: string };
   const [formData, setFormData] = useState<Form>({
-    title: "",
-    content: "",
-    url: "",
+    email: "",
+    password: "",
   });
+  const [loggedInStatus, LoggedIn] = useState<string>("未ログイン");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e);
@@ -15,39 +15,31 @@ export const CreatePosts = () => {
   };
   console.log(formData);
   const onSubmit = (event: Form) => {
-    PostCreate(event);
+    console.log(event);
+    SessionCreate(event, LoggedIn);
   };
   return (
     <div className="text-center grid grid-cols-1 mx-40">
-      <p>post form</p>
+      <p>ログインフォーム</p>
+      <p>ログイン状態：{loggedInStatus}</p>
       <div className="p-3">
-        <span>title：</span>
+        <span>email：</span>
         <input
-          name="title"
+          name="email"
           type="text"
           className=" text-slate-700"
           onChange={handleChange}
-          value={formData.title}
+          value={formData.email}
         />
       </div>
       <div className="p-3">
-        <span>content：</span>
+        <span>password：</span>
         <input
-          name="content"
+          name="password"
           type="text"
           className=" text-slate-700"
           onChange={handleChange}
-          value={formData.content}
-        />
-      </div>
-      <div className="p-3">
-        <span>url：</span>
-        <input
-          name="url"
-          type="text"
-          className=" text-slate-700"
-          onChange={handleChange}
-          value={formData.url}
+          value={formData.password}
         />
       </div>
 

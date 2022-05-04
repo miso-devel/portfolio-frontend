@@ -1,5 +1,4 @@
 import { Posts } from "../components/posts/posts";
-import { CreatePosts } from "../components/posts/createPosts";
 import { Profile } from "../components/profiles/profile";
 import { Career } from "../components/profiles/career";
 export const Home = () => {
@@ -9,7 +8,6 @@ export const Home = () => {
       <div className=" col-span-2  border-l-orange-500 border-l-2">
         <Career />
         <Posts />
-        <CreatePosts />
       </div>
     </div>
   );
