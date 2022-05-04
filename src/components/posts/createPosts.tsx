@@ -18,35 +18,38 @@ export const CreatePosts = () => {
     PostCreate(event);
   };
   return (
-    <div className=" text-center">
+    <div className="text-center grid grid-cols-1 mx-40">
       <p>post form</p>
-
-      <span>title</span>
-      <input
-        name="title"
-        type="text"
-        className=" text-slate-700"
-        onChange={handleChange}
-        value={formData.title}
-      />
-
-      <span>content</span>
-      <input
-        name="content"
-        type="text"
-        className=" text-slate-700"
-        onChange={handleChange}
-        value={formData.content}
-      />
-
-      <span>url</span>
-      <input
-        name="url"
-        type="text"
-        className=" text-slate-700"
-        onChange={handleChange}
-        value={formData.url}
-      />
+      <div className="p-3">
+        <span>title：</span>
+        <input
+          name="title"
+          type="text"
+          className=" text-slate-700"
+          onChange={handleChange}
+          value={formData.title}
+        />
+      </div>
+      <div className="p-3">
+        <span>content：</span>
+        <input
+          name="content"
+          type="text"
+          className=" text-slate-700"
+          onChange={handleChange}
+          value={formData.content}
+        />
+      </div>
+      <div className="p-3">
+        <span>url：</span>
+        <input
+          name="url"
+          type="text"
+          className=" text-slate-700"
+          onChange={handleChange}
+          value={formData.url}
+        />
+      </div>
 
       <button onClick={() => onSubmit(formData)}>送信</button>
     </div>

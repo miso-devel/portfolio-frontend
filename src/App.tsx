@@ -1,19 +1,16 @@
 import "./App.css";
-import { Posts } from "./components/posts/posts";
-import { CreatePosts } from "./components/posts/createPosts";
-import { Profile } from "./components/Layouts/profile";
-import { Career } from "./components/Layouts/career";
+import { Home } from "./components/home";
+import { Admin } from "./components/admin";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App  bg-slate-900">
-      <div className="grid grid-cols-3">
-        <Profile />
-        <div className=" col-span-2  border-l-orange-500 border-l-2">
-          <Career />
-          <Posts />
-          <CreatePosts />
-        </div>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="" element={<Home />} />
+          <Route path="/administrater" element={<Admin />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
