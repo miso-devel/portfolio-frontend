@@ -15,7 +15,7 @@ export const Posts = () => {
                 className="text-center text-slate-800 neumorphism p-2 py-5 md:p-10"
               >
                 <p className="text-xl font-bold py-3">{p.title}</p>
-                <p>{p.content}</p>
+                <p className="text-left">{p.content}</p>
                 <a href={p.url} className="border-b-2 p-1 border-stone-800">
                   github
                 </a>
